@@ -1,0 +1,35 @@
+= Building Neo4j Applications with TypeScript
+
+> Learn how to interact with Neo4j from a TypeScript project using the Neo4j JavaScript Driver
+
+
+This repository accompanies the link:https://graphacademy.neo4j.com/courses/app-typescript/[Building Neo4j Applications with TypeScript course^] on link:https://graphacademy.neo4j.com/[Neo4j GraphAcademy^].
+
+For a complete walkthrough of this repository,  link:https://graphacademy.neo4j.com/courses/app-typescript/[enrol now^].
+
+
+== About this Repository
+
+This repository uses the default TypeScript configuration generated with the `npx tsc --init` command.
+
+== Installing the Driver
+
+To use the Neo4j JavaScript Driver in your TypeScript project, you can run the following command:
+
+// tag::install[]
+[source,sh]
+----
+npm install neo4j-driver
+----
+// end::install[]
+
+
+
+== Running Examples
+
+All examples that accompany the course are in the `src/` folder.  You can run these examples by invoking the `ts-node` command using `npx`.
+
+[source,sh]
+----
+npx ts-node ./src/read.ts
+----

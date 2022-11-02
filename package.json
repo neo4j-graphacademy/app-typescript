@@ -1,0 +1,31 @@
+{
+  "name": "@neo4j-graphacademy/app-typescript",
+  "version": "1.0.0",
+  "description": "https://graphacademy.neo4j.com/courses/app-typescript/",
+  "main": "src/main.ts",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neo4j-graphacademy/app-typescript.git"
+  },
+  "keywords": [
+    "neo4j",
+    "typescript",
+    "javascript",
+    "nodejs"
+  ],
+  "author": "Adam Cowley <adam+github@neo4j,com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neo4j-graphacademy/app-typescript/issues"
+  },
+  "homepage": "https://github.com/neo4j-graphacademy/app-typescript#readme",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "neo4j-driver": "^5.2.0"
+  }
+}
