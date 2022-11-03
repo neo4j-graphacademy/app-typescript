@@ -15,6 +15,12 @@ const driver = neo4j.driver(
 )
 // end::driver[]
 
+async function close() {
+  // tag::close[]
+  await driver.close()
+  // end::close[]
+}
+
 async function main() {
 
   // tag::verify[]

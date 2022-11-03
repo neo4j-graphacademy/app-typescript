@@ -2,9 +2,11 @@
 import neo4j from 'neo4j-driver'
 
 // Neo4j Credentials
-const NEO4J_URI = 'neo4j://localhost:7687'
-const NEO4J_USERNAME = 'neo4j'
-const NEO4J_PASSWORD = 'letmein'
+const {
+  NEO4J_URI,
+  NEO4J_USERNAME,
+  NEO4J_PASSWORD
+} = process.env
 
 async function main() {
   // Create a Driver Instance

@@ -1,0 +1,53 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Create Driver Challenge",
+      "cwd": "${workspaceFolder}",
+      "runtimeArgs": [
+        "--loader",
+        "ts-node/esm",
+        "--experimental-specifier-resolution=node"
+      ],
+      "program": "${workspaceFolder}/src/challenges/create-driver/challenge.ts",
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Create Driver Solution",
+      "cwd": "${workspaceFolder}",
+      "runtimeArgs": [
+        "--loader",
+        "ts-node/esm",
+        "--experimental-specifier-resolution=node"
+      ],
+      "program": "${workspaceFolder}/src/challenges/create-driver/solution.ts",
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Writing Data Challenge",
+      "cwd": "${workspaceFolder}",
+      "runtimeArgs": [
+        "--loader",
+        "ts-node/esm",
+        "--experimental-specifier-resolution=node"
+      ],
+      "program": "${workspaceFolder}/src/challenges/write/challenge.ts",
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Writing Data Solution",
+      "cwd": "${workspaceFolder}",
+      "runtimeArgs": [
+        "--loader",
+        "ts-node/esm",
+        "--experimental-specifier-resolution=node"
+      ],
+      "program": "${workspaceFolder}/src/challenges/write/solution.ts",
+    },
+  ]
+}
