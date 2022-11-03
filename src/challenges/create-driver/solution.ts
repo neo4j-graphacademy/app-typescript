@@ -1,6 +1,7 @@
 // tag::import[]
 // Import the driver
 import neo4j, { Integer, Node, Relationship } from 'neo4j-driver'
+import { getNeo4jCredentials } from '../utils'
 // end::import[]
 
 // tag::credentials[]
@@ -9,7 +10,7 @@ const {
   NEO4J_URI,
   NEO4J_USERNAME,
   NEO4J_PASSWORD
-} = process.env
+} = getNeo4jCredentials()
 // end::credentials[]
 
 async function main() {
