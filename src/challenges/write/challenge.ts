@@ -21,8 +21,8 @@ async function main() {
 
   try {
     const cypher = `
-      MATCH (m:Movie {title: "The Matrix"})
-      CREATE (p:Person {name: "Some Person"})
+      MATCH (m:Movie {title: "Matrix, The"})
+      CREATE (p:Person {name: $name})
       CREATE (p)-[:ACTED_IN]->(m)
       RETURN p
     `
