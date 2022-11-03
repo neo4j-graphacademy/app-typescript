@@ -30,8 +30,8 @@ async function main() {
     // Execute a Cypher statement in an auto-commit transaction
     const res = await session.run(
       `
-      MATCH (p:Person)-[:DIRECTED]->(:Movie {title: $title})
-      RETURN p.name
+        MATCH (p:Person)-[:DIRECTED]->(:Movie {title: $title})
+        RETURN p.name
       `, // <1>
       { title: 'The Matrix' }, // <2>
       { timeout: 3000 } // <3>

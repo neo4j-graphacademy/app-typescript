@@ -85,9 +85,10 @@ async function after() {
     // Execute a Cypher statement in a Read Transaction
     const res = await session.executeRead(tx =>
       tx.run<PersonActedInMovie>(`
-      MATCH (p:Person)-[r:ACTED_IN]->(m:Movie {title: $title})
-      RETURN p, r, m
-      `, { title: 'Pulp Fiction' })
+        MATCH (p:Person)-[r:ACTED_IN]->(m:Movie {title: $title})
+        RETURN p, r, m
+      `,
+      { title: 'Pulp Fiction' })
     )
     // end::after[]
 
