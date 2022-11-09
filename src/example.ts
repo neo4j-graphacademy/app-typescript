@@ -44,10 +44,14 @@ async function main() {
     )
     // end::oneoff[]
 
+    res
+
+    // tag::oneoffresult[]
     // Get all Person nodes
     const people = res.records.map(
-      record => record.get('p')
+      (record: Record) => record.get('p')
     )
+      // end::oneoffresult[]
   }
   finally {
     // Close the Session
@@ -171,7 +175,7 @@ async function streamingExample() {
               // Close the Session
               session.close()
             },
-            onError: error => {
+            onError: (error: Error) => {
               console.log(error)
             }
           })
