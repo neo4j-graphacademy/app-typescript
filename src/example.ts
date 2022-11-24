@@ -144,6 +144,38 @@ async function writeTransactionExample() {
   }
 }
 
+async function iterateExample() {
+  // Open a new Session
+  const session = driver.session()
+
+  try {
+    const cypher = `
+      MATCH (m:Movie {title: $title})
+      CREATE (p:Person {name: $name})
+      CREATE (p)-[:ACTED_IN]->(m)
+      RETURN p.name AS Name
+    `
+    const params = { title: 'Toy Story', name: 'Tom Hanks' }
+
+    // Execute cypher in a write transaction
+    await session.executeWrite(
+      async (tx: ManagedTransaction) => {
+        // tag::iterate[]
+        const res = tx.run<T>(cypher, params)
+
+        for await (const record of res) {
+          console.log(record.get('Name'));
+        }
+        // end::iterate[]
+      }
+    )
+  }
+  finally {
+    // Close the session
+    await session.close()
+  }
+}
+
 async function streamingExample() {
   // Open a new Session
   const session = driver.session()
