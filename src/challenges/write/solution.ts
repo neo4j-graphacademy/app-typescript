@@ -29,7 +29,7 @@ async function main() {
     const params = { name: 'Your Name' }
 
     // Execute the `cypher` statement in a write transaction
-    const res = await session.executeRead(
+    const res = await session.executeWrite(
       tx => tx.run(cypher, params)
     )
 
