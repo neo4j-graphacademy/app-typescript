@@ -10,12 +10,16 @@ const {
 } = getNeo4jCredentials()
 
 async function main() {
-  // TODO: Create a Driver Instance
+  // TODO: Create a Driver Instance using neo4j.driver()
 
-  // TODO: Open a new Session
+  // TODO: Open a new Session using driver.session()
 
   try {
-    // TODO: Run a Cypher statement
+    // TODO: Run this Cypher statement using session.run()
+    const cypher = `
+      MATCH (p:Person)-[:DIRECTED]->(:Movie {title: $title})
+      RETURN p.name AS Director
+    `
 
     // TODO: Log the Director value of the first record
 
@@ -23,7 +27,6 @@ async function main() {
   finally {
     // TODO: Close the session
   }
-
 }
 
 main()
