@@ -13,18 +13,6 @@ const {
 } = getNeo4jCredentials()
 // end::credentials[]
 
-
-// Import the driver
-import neo4j, { Integer, Node, Relationship } from 'neo4j-driver'
-import { getNeo4jCredentials } from '../utils'
-
-// Neo4j Credentials
-const {
-  NEO4J_URI,
-  NEO4J_USERNAME,
-  NEO4J_PASSWORD
-} = getNeo4jCredentials()
-
 async function main() {
   // tag::solution[]
   // Create a Driver Instance using neo4j.driver()
