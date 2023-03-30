@@ -20,6 +20,7 @@ async function main() {
       MATCH (p:Person)-[:DIRECTED]->(:Movie {title: $title})
       RETURN p.name AS Director
     `
+    const params = { title: 'Toy Story' }
 
     // TODO: Log the Director value of the first record
 
