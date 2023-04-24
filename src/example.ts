@@ -37,7 +37,7 @@ async function main() {
     const res = await session.run(
       `
         MATCH (p:Person)-[:DIRECTED]->(:Movie {title: $title})
-        RETURN p.name
+        RETURN p
       `, // <1>
       { title: 'The Matrix' }, // <2>
       { timeout: 3000 } // <3>
