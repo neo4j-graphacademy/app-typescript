@@ -92,7 +92,7 @@ async function readTransactionExample() {
     const record = res.records[0]
 
     // tag::keys[]
-    console.log(record.get('keys')) // ['p', 'r', 'm']
+    console.log(record.keys()) // ['p', 'r', 'm']
     console.log(record.has('x')) // false
     // end::keys[]
 
