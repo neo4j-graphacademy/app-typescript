@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'; 
+dotenv.config({ path: '.env' });
+
 // Import the driver
 import neo4j from 'neo4j-driver'
 import { getNeo4jCredentials } from '../utils'

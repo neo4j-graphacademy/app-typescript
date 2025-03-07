@@ -1,0 +1,19 @@
+{
+	"name": "Building Neo4j Applications with TypeScript",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	"postCreateCommand": "bash .devcontainer/post_create.sh",
+	"customizations": {
+		"codespaces": {
+			"openFiles": [
+				"SETUP.md",
+				".env.example",
+				"src/challenges/create-driver/challenge.ts"
+				]
+		},
+		"vscode": {
+			"extensions": [
+				"formulahendry.code-runner"
+				]
+		}
+	}
+}
