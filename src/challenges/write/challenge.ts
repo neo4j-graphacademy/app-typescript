@@ -23,15 +23,16 @@ async function main() {
   const session = driver.session()
 
   try {
-    const cypher = `
-      MATCH (m:Movie {title: "Matrix, The"})
-      CREATE (p:Person {name: $name})
-      CREATE (p)-[:ACTED_IN]->(m)
-      RETURN p
-    `
-    const params = { name: 'Your Name' }
+    // TODO: Create the Cypher statement
+    
+
+    // TODO: Define the parameters
+
 
     // TODO: Execute the `cypher` statement in a write transaction
+
+    
+    // TODO: Log the result
 
   }
   finally {

@@ -23,20 +23,31 @@ async function main() {
   const session = driver.session()
 
   try {
+    // tag::cypher[]
+    // Create the Cypher statement
     const cypher = `
       MATCH (m:Movie {title: "Matrix, The"})
       CREATE (p:Person {name: $name})
       CREATE (p)-[:ACTED_IN]->(m)
       RETURN p
     `
+    // end::cypher[]
+
+    // tag::params[]
+    // Define the parameters
     const params = { name: 'Your Name' }
+    // end::params[]
 
     // Execute the `cypher` statement in a write transaction
+    // tag::execute[]
     const res = await session.executeWrite(
       tx => tx.run(cypher, params)
     )
+    // end::execute[]
 
+    // tag::log_result[]
     console.log(res.records[0].get('p'))
+    // end::log_result[]
   }
   finally {
     // Close the session
