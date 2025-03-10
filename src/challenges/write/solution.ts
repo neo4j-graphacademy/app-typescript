@@ -23,8 +23,8 @@ async function main() {
   const session = driver.session()
 
   try {
-    // tag::cypher[]
     // Create the Cypher statement
+    // tag::cypher[]
     const cypher = `
       MATCH (m:Movie {title: "Matrix, The"})
       CREATE (p:Person {name: $name})
@@ -33,8 +33,8 @@ async function main() {
     `
     // end::cypher[]
 
-    // tag::params[]
     // Define the parameters
+    // tag::params[]
     const params = { name: 'Your Name' }
     // end::params[]
 
