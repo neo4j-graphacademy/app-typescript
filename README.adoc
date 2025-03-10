@@ -17,14 +17,11 @@ This repository uses the default TypeScript configuration generated with the `np
 
 To use the Neo4j JavaScript Driver in your TypeScript project, you can run the following command:
 
-// tag::install[]
 .Installing the neo4j-driver dependency
 [source,sh]
 ----
 npm install neo4j-driver
 ----
-// end::install[]
-
 
 == Running Examples
 
