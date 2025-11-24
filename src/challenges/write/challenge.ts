@@ -9,7 +9,8 @@ import { getNeo4jCredentials } from '../utils'
 const {
   NEO4J_URI,
   NEO4J_USERNAME,
-  NEO4J_PASSWORD
+  NEO4J_PASSWORD,
+  NEO4J_DATABASE
 } = getNeo4jCredentials()
 
 async function main() {
@@ -20,7 +21,7 @@ async function main() {
   )
 
   // Open a new Session
-  const session = driver.session()
+  const session = driver.session({ database: NEO4J_DATABASE })
 
   try {
     // TODO: Create the Cypher statement
