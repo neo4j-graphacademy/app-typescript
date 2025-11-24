@@ -12,7 +12,8 @@ import { getNeo4jCredentials } from '../utils'
 const {
   NEO4J_URI,
   NEO4J_USERNAME,
-  NEO4J_PASSWORD
+  NEO4J_PASSWORD,
+  NEO4J_DATABASE
 } = getNeo4jCredentials()
 // end::credentials[]
 
@@ -28,7 +29,7 @@ async function main() {
 
   // Open a new Session using driver.session()
   // tag::new_session[]
-  const session = driver.session()
+  const session = driver.session({ database: NEO4J_DATABASE })
   // end::new_session[]
 
   try {
