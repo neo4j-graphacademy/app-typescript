@@ -6,13 +6,14 @@ import { getNeo4jCredentials } from '../utils'
 const {
   NEO4J_URI,
   NEO4J_USERNAME,
-  NEO4J_PASSWORD
+  NEO4J_PASSWORD,
+  NEO4J_DATABASE
 } = getNeo4jCredentials()
 
 async function main() {
   // TODO: Create a Driver Instance using neo4j.driver()
 
-  // TODO: Open a new Session using driver.session()
+  // TODO: Open a new Session using driver.session() and specify the database
 
   try {
     // TODO: Run this Cypher statement using session.run()
