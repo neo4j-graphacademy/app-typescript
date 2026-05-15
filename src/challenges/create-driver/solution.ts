@@ -27,11 +27,6 @@ async function main() {
   )
   // end::create_driver[]
 
-  // Open a new Session using driver.session()
-  // tag::new_session[]
-  const session = driver.session({ database: NEO4J_DATABASE })
-  // end::new_session[]
-
   try {
     // tag::run_cypher[]
     const cypher = `
@@ -40,8 +35,12 @@ async function main() {
     `
     const params = { title: 'Toy Story' }
 
-    // Run the Cypher statement using session.run()
-    const res = await session.run(cypher, params)
+    // Run the Cypher statement using driver.executeQuery()
+    const res = await driver.executeQuery(
+      cypher,
+      params,
+      { database: NEO4J_DATABASE }
+    )
     // end::run_cypher[]
 
     // Log the Director value of the first record
@@ -50,9 +49,9 @@ async function main() {
     // end::log_director[]
   }
   finally {
-    // Close the session
+    // Close the driver
     // tag::close_session[]
-    await session.close()
+    await driver.close()
     // end::close_session[]
   }
   // end::solution[]
