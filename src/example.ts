@@ -9,9 +9,9 @@ import { ManagedTransaction, ResultSummary, Record } from 'neo4j-driver'
 // tag::driver[]
 // Create a Driver Instance
 const driver = neo4j.driver(
-  'neo4j+s://dbhash.databases.neo4j.io', // <1>
-  neo4j.auth.basic('neo4j', 'letmein!'), // <2>
-  { disableLosslessIntegers: true } // <3>
+  'neo4j+s://dbhash.databases.neo4j.io', // (1)
+  neo4j.auth.basic('neo4j', 'letmein!'), // (2)
+  { disableLosslessIntegers: true } // (3)
 )
 // end::driver[]
 
@@ -38,9 +38,9 @@ async function main() {
       `
         MATCH (p:Person)-[:DIRECTED]->(:Movie {title: $title})
         RETURN p
-      `, // <1>
-      { title: 'The Matrix' }, // <2>
-      { timeout: 3000 } // <3>
+      `, // (1)
+      { title: 'The Matrix' }, // (2)
+      { timeout: 3000 } // (3)
     )
     // end::oneoff[]
 
