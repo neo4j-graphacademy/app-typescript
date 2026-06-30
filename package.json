@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "dotenv": "^16.4.7",
-    "neo4j-driver": "^5.28.1",
+    "neo4j-driver": "^6.0.1",
     "ts-node": "^10.9.2"
   }
 }

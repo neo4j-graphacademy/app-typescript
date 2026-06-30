@@ -16,7 +16,7 @@ const {
 async function main() {
   // TODO: Create a Driver Instance using neo4j.driver()
 
-  // TODO: Open a new Session using driver.session() and specify the database
+  // TODO: Configure executeQuery() with the target database
 
   try {
     const cypher = `
@@ -25,13 +25,13 @@ async function main() {
     `
     const params = { title: 'Toy Story' }
 
-    // TODO: Run the Cypher statement using session.run()
+    // TODO: Run the Cypher statement using driver.executeQuery()
 
     // TODO: Log the Director value of the first record
 
   }
   finally {
-    // TODO: Close the session
+    // TODO: Close the driver
   }
 }
 
