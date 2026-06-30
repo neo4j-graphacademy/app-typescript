@@ -28,35 +28,26 @@ async function main() {
   await driver.verifyConnectivity()
   // end::verify[]
 
-  // Open a new Session
-  const session = driver.session()
+  // tag::oneoff[]
+  // Execute a Cypher statement in an auto-commit transaction
+  const res = await driver.executeQuery(
+    `
+      MATCH (p:Person)-[:DIRECTED]->(:Movie {title: $title})
+      RETURN p
+    `, // (1)
+    { title: 'The Matrix' }, // (2)
+    {
+      transactionConfig: { timeout: 3000 }
+    } // (3)
+  )
+  // end::oneoff[]
 
-  try {
-    // tag::oneoff[]
-    // Execute a Cypher statement in an auto-commit transaction
-    const res = await session.run(
-      `
-        MATCH (p:Person)-[:DIRECTED]->(:Movie {title: $title})
-        RETURN p
-      `, // (1)
-      { title: 'The Matrix' }, // (2)
-      { timeout: 3000 } // (3)
-    )
-    // end::oneoff[]
-
-    res
-
-    // tag::oneoffresult[]
-    // Get all Person nodes
-    const people = res.records.map(
-      (record: Record) => record.get('p')
-    )
-      // end::oneoffresult[]
-  }
-  finally {
-    // Close the Session
-    await session.close()
-  }
+  // tag::oneoffresult[]
+  // Get all Person nodes
+  const people = res.records.map(
+    (record: Record) => record.get('p')
+  )
+    // end::oneoffresult[]
 }
 
 // Temporarily map record shapes to `any` to avoid ts errors
@@ -92,7 +83,7 @@ async function readTransactionExample() {
     const record = res.records[0]
 
     // tag::keys[]
-    console.log(record.keys()) // ['p', 'r', 'm']
+    console.log(record.keys) // ['p', 'r', 'm']
     console.log(record.has('x')) // false
     // end::keys[]
 

@@ -2,6 +2,7 @@ interface Neo4jCredentials {
   NEO4J_URI: string;
   NEO4J_USERNAME: string;
   NEO4J_PASSWORD: string;
+  NEO4J_DATABASE: string;
 }
 
 /**
