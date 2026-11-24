@@ -1,6 +1,6 @@
 {
 	"name": "Building Neo4j Applications with TypeScript",
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:5-22-trixie",
 	"postCreateCommand": "bash .devcontainer/post_create.sh",
 	"customizations": {
 		"codespaces": {
